@@ -1,0 +1,28 @@
+
+{
+    "name": "project3-poseidon2-circom-windows",
+    "version": "1.0.0",
+    "description": "A Windows-friendly Circom implementation of the Poseidon2 hash function.",
+    "main": "index.js",
+    "scripts": {
+      "compile": "circom circuits/main.circom --r1cs --wasm --sym -o build",
+      "setup": "npx snarkjs groth16 setup build/main.r1cs build/pot12_final.ptau build/main_0000.zkey && npx snarkjs zkey contribute build/main_0000.zkey build/main_final.zkey -v -e=\"some random text\" && npx snarkjs zkey export verificationkey build/main_final.zkey build/verification_key.json",
+      "witness": "npx snarkjs wtns calculate build/main_js/main.wasm input.json build/witness.wtns",
+      "prove": "npx snarkjs groth16 prove build/main_final.zkey build/witness.wtns build/proof.json build/public.json",
+      "verify": "npx snarkjs groth16 verify build/verification_key.json build/public.json build/proof.json"
+    },
+    "keywords": [
+      "circom",
+      "snark",
+      "zksnark",
+      "poseidon2",
+      "groth16",
+      "windows"
+    ],
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+      "circomlib": "^2.0.5",
+      "snarkjs": "^0.7.0"
+    }
+  }
