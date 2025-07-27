@@ -10,6 +10,8 @@
 
 ```
 .
+├── build
+│   ├──pot12_final.ptau
 ├── circuits
 │   ├── main.circom         # 主电路，用于连接输入和哈希约束
 │   └── poseidon2.circom    # Poseidon2 哈希排列的核心实现
@@ -77,13 +79,10 @@
     ```
     这会在的项目下创建一个 `node_modules` 文件夹。
 
-#### 第二步：手动下载可信设置文件
-
-这是**必须手动完成**的关键步骤，因为自动化脚本无法代替下载大文件。
+#### 第二步：下载可信设置文件
 
 1.  在项目根目录下，手动创建一个名为 `build` 的文件夹。
-2.  **点击以下链接**或将其复制到浏览器地址栏中，下载 Powers of Tau 文件：
-    [https://hermez.s3-eu-west-1.amazonaws.com/powersOfTau28_hez_final_12.ptau](https://hermez.s3-eu-west-1.amazonaws.com/powersOfTau28_hez_final_12.ptau)
+2.  下载 Powers of Tau 文件：
 3.  将下载好的文件（`powersOfTau28_hez_final_12.ptau`）**重命名**为 `pot12_final.ptau`。
 4.  将重命名后的 `pot12_final.ptau` 文件**移动**到刚刚创建的 `build` 文件夹内。
 
